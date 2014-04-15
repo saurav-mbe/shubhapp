@@ -1,0 +1,42 @@
+<ion-view title="{{tab.title}}">
+  <ion-nav-buttons side="left"><button class="button button-positive button-clear no-animation"
+                  ng-click="">Settings</button></ion-nav-buttons>
+  <ion-nav-buttons side="right"><button class="button button-positive button-clear no-animation"
+                  ng-click="newCat()">Add</button></ion-nav-buttons>                
+  <ion-content class="has-header padding">
+    <ion-list>
+    	<ion-item ng-repeat = "subcat in subcats" href="#/tab/{{hash}}/{{subcat.ID}}">
+              {{subcat.shubhsubcatname}}
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+<script id="new-cat.html" type="text/ng-template">
+
+  <div class="modal">
+
+    <!-- Modal header bar -->
+    <ion-header-bar class="bar-secondary">
+      <h1 class="title">New Category</h1>
+      <button class="button button-clear button-positive" ng-click="closeNewCat()">Cancel</button>
+    </ion-header-bar>
+
+    <!-- Modal content area -->
+    <ion-content>
+
+      <form ng-submit="createCat(subcat)">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Name" ng-model="subcat.shubhsubcatname">
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Create Category</button>
+        </div>
+      </form>
+
+    </ion-content>
+
+  </div>
+
+</script>
