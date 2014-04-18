@@ -10,13 +10,60 @@
   <ion-nav-buttons side="right"><button class="button button-positive button-clear no-animation"
                   ng-click="newItem()">Add</button></ion-nav-buttons>                
   <ion-content class="has-header padding">
-    <ion-list>
-    <slide-box on-slide-changed="slideChanged(index)">
-    	<slide ng-repeat="item in items" >
-              
-        </slide>
-    </slide-box>
-    </ion-list>
+    
+      <ion-slide-box on-slide-changed="slideChanged(index)">
+          <ion-slide ng-repeat="item in items">
+            <h3>{{item.name}}!</h3>
+            <div ><img style="width:80px:height:50px;color:green" src="file:///mnt/sdcard{{item.image}}">
+               {{item.image}}
+               free
+            <div>Colour : {{item.colour}}</div>
+            <div>Brand : {{item.brand}}</div>
+            </img></div>
+           
+          </ion-slide>
+        </ion-slide-box>
+
+    
   </ion-content>
   <image id="tryimage"></image>
 </ion-view>
+<script id="new-item.html" type="text/ng-template">
+
+  <div class="modal">
+
+    <!-- Modal header bar -->
+    <ion-header-bar class="bar-secondary">
+      <h1 class="title">New Category</h1>
+      <button class="button button-clear button-positive" ng-click="closeNewItem()">Cancel</button>
+    </ion-header-bar>
+
+    <!-- Modal content area -->
+    <ion-content>
+      <image src="image"></image>
+      <form ng-submit="createItem(item)">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Name" ng-model="item.name">
+          </label>
+         
+            Colour : <select  ng-model="item.colour" ng-options="i.ID as i.name for i in colours">
+               <option value="" ></option>
+             </select>
+          
+          <div class="padding">
+              Brand : <select  ng-model="item.brand" ng-options="i.ID as i.name for i in brands">
+               <option value="" ></option>
+             </select>
+          </div>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Create Category</button>
+        </div>
+      </form>
+
+    </ion-content>
+
+  </div>
+
+</script>

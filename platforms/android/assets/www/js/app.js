@@ -43,7 +43,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           templateUrl: 'templates/tab-dash.html',
           controller: 'DashCtrl'
         }
-      }
+      },
+      data : {
+      title : 'Clothes',
+      catId : 1,
+      hash:'clothes'
+    }
     })
 
     .state('tab.shoes', {
@@ -53,10 +58,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           templateUrl: 'templates/tab-dash.html',
           controller: 'DashCtrl'
         }
-      }
+      },
+        data : {
+      title : 'Shoes',
+      catId : 2,
+      hash:'shoes'
+    }
     })
     .state('tab.friend-detail', {
-      url: '/shoes/:friendId',
+      url: '/shoes/:catId',
       views: {
         'tab-shoes': {
           templateUrl: 'templates/friend-detail.html',
@@ -71,6 +81,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         'tab-accessories': {
           templateUrl: 'templates/tab-dash.html',
           controller: 'DashCtrl'
+        }
+      },
+        data : {
+      title : 'Accessories',
+      catId : 3,
+      hash:'accessories'
+    }
+    })
+    .state('tab.clothes-list', {
+      url: '/clothes/:catId',
+      views: {
+        'tab-clothes': {
+          templateUrl: 'templates/friend-detail.html',
+          controller: 'FriendDetailCtrl'
+        }
+      }     
+    })
+    .state('tab.accessories-list', {
+      url: '/accessories/:catId',
+      views: {
+        'tab-accessories': {
+          templateUrl: 'templates/friend-detail.html',
+          controller: 'FriendDetailCtrl'
         }
       }
     })

@@ -5,7 +5,7 @@
                   ng-click="newCat()">Add</button></ion-nav-buttons>                
   <ion-content class="has-header padding">
     <ion-list>
-    	<ion-item ng-repeat = "subcat in subcats" href="#/tab/{{hash}}/{{subcat.ID}}">
+    	<ion-item ng-repeat = "subcat in subcats" href="#/tab/{{tab.hash}}/{{subcat.ID}}">
               {{subcat.shubhsubcatname}}
         </ion-item>
     </ion-list>

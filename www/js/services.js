@@ -19,16 +19,24 @@ angular.module('starter.services', [])
   } 
   return {
     populateDB: function() {
+      
       if(localStorage.getItem('isDbCreated')){
         return;
       }
+      //base data to be created....add 10 brands,10 colours 3 sub categories (for each category) .
       db.transaction(function(tx){
+        //tx.executeSql('INSERT INTO colours (name) VALUES ("Pink")');
+      //tx.executeSql('INSERT INTO colours (name) VALUES ("Lavender")');
+      //tx.executeSql('INSERT INTO colours (name) VALUES ("Green")');
+      //tx.executeSql('INSERT INTO brands (name) VALUES ("Lifestyle")');
+      //tx.executeSql('INSERT INTO brands (name) VALUES ("Adidas")');
+      //tx.executeSql('INSERT INTO brands (name) VALUES ("Nike")');
         tx.executeSql('CREATE TABLE IF NOT EXISTS shubhcats(ID INTEGER PRIMARY KEY AUTOINCREMENT, shubhcatname TEXT)',[],function(tx,e){});
         tx.executeSql('CREATE TABLE IF NOT EXISTS colours (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)',[],function(){});
         tx.executeSql('CREATE TABLE IF NOT EXISTS brands (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)');
-        tx.executeSql('INSERT INTO shubhcats (shubhcatname) VALUES ("Clothes")');
-        tx.executeSql('INSERT INTO shubhcats (shubhcatname) VALUES ("Shoes")');
-        tx.executeSql('INSERT INTO shubhcats (shubhcatname) VALUES ("Accessories")');
+        //tx.executeSql('INSERT INTO shubhcats (shubhcatname) VALUES ("Clothes")');
+        //tx.executeSql('INSERT INTO shubhcats (shubhcatname) VALUES ("Shoes")');
+        //tx.executeSql('INSERT INTO shubhcats (shubhcatname) VALUES ("Accessories")');
         tx.executeSql('CREATE TABLE IF NOT EXISTS shubhsubcats (ID INTEGER PRIMARY KEY AUTOINCREMENT,shubhsubcatname TEXT, shubhcatid INTEGER, FOREIGN KEY (shubhcatid) REFERENCES shubhcats(ID))');
         tx.executeSql('CREATE TABLE IF NOT EXISTS shubhitems (ID INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,image TEXT,colour INTEGER, '+
           'brand INTEGER ,shubhsubcatid INTEGER, FOREIGN KEY (shubhsubcatid) REFERENCES shubhsubcats (ID) ,FOREIGN KEY (brand) '+
@@ -36,6 +44,7 @@ angular.module('starter.services', [])
         });
       localStorage.setItem('isDbCreated','Yes');
     },
+    //update and delete methods to be added for all tables
     getAllSubcategories : function(catId,cb) {
       db.transaction(function(tx){
         tx.executeSql('SELECT * FROM shubhsubcats WHERE shubhcatid = '+catId,[],cb,errorCb);
@@ -56,15 +65,26 @@ angular.module('starter.services', [])
         tx.executeSql('INSERT INTO shubhsubcats (shubhsubcatname,shubhcatid) VALUES (?,?)',[name,catId],cb,errorCb);
     });
     },
+    saveColor : function(name,cb){
+      db.transaction(function(tx){
+        tx.executeSql('INSERT INTO colours (name) VALUES (?)',[name],cb,errorCb);
+    });
+    },
+    saveBrand : function(name,cb){
+      db.transaction(function(tx){
+        tx.executeSql('INSERT INTO brands (name) VALUES (?)',[name],cb,errorCb);
+    });
+    },
     getAllItems : function(catId,cb){
+      //alert("here")
       db.transaction(function(tx){
         tx.executeSql('SELECT * FROM shubhitems WHERE shubhsubcatid='+catId,[],cb,errorCb);
       });
     },
-    saveItem : function(){
+    saveItem : function(item,cb){
       db.transaction(function(tx){
         tx.executeSql('INSERT INTO shubhitems (name,image,colour,brand,shubhsubcatid) VALUES (?,?,?,?,?)',
-          [],
+          [item.name,item.image,item.colour,item.brand,item.shubhsubcatid],
           cb,errorCb)
       })
     }
