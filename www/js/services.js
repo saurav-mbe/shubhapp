@@ -87,6 +87,26 @@ angular.module('starter.services', [])
           [item.name,item.image,item.colour,item.brand,item.shubhsubcatid],
           cb,errorCb)
       })
+    },
+    updateSubCategory : function(name,subcatId,cb){
+      db.transaction(function(tx){
+        tx.executeSql('UPDATE shubhsubcats SET name=? WHERE ID = '+ subcatId,[name],cb,errorCb);
+      })
     }
 }
+})
+.factory('filereader',function(){
+    var reader = new FileReader();
+    return {
+      readAsDataURL : function(){
+        
+      }
+    }
+}).
+factory('jsonhelper',function(){
+    return {
+      findOne : function(){
+
+      }
+    } 
 });

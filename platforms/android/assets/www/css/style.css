@@ -1,1 +1,10 @@
 /* Empty. Add your own CSS if you like */
+.content > .scroll {
+  height: 100%;
+}
+.content > .scroll > .fullScreenAvl {
+  height: 100%;
+}
+.scroll{
+   min-height:100%
+} 

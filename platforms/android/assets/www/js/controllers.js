@@ -6,6 +6,7 @@ angular.module('starter.controllers', [])
    // window.resolveLocalFileSystemURI('shubhapp',function(entry){alert("x"+entry.name)},function(err){alert("error"+err.code)});  
   },false)
   $scope.subcats = [];
+  $scope.subcat = {shubhsubcatname:"Jeans"}
   var tabs = {
     'clothes':{
       title : 'Clothes',
@@ -69,6 +70,7 @@ angular.module('starter.controllers', [])
   };
 })
 .controller('FriendDetailCtrl', function($scope, $stateParams, dbhelper,$ionicModal,$ionicSlideBoxDelegate) {
+   try{
    $scope.items = [];
    $scope.colours = [];
    $scope.brands = [];
@@ -162,5 +164,23 @@ angular.module('starter.controllers', [])
   $scope.closeNewItem = function() {
     $scope.itemModal.hide();
   };
+  $scope.getColour = function(id){
+    console.log("nsiden get coloir");
+    for(var i = 0;i<$scope.colours.length;i++){
+      if(id===$scope.colours[i].ID){
+        return $scope.colours[i].name
+      }
+    }
+  };
+  $scope.getBrand = function(id){
+     for(var i = 0;i<$scope.brands.length;i++){
+      if(id===$scope.brands[i].ID){
+        return $scope.brands[i].name
+      }
+    }
+  };
+}catch(e){
+  console.log(e);
+}
 })
 

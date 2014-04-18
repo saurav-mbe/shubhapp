@@ -10,23 +10,14 @@
   <ion-nav-buttons side="right"><button class="button button-positive button-clear no-animation"
                   ng-click="newItem()">Add</button></ion-nav-buttons>                
   <ion-content class="has-header padding">
-    
-      <ion-slide-box on-slide-changed="slideChanged(index)">
+       <ion-slide-box on-slide-changed="slideChanged(index)">
           <ion-slide ng-repeat="item in items">
             <h3>{{item.name}}!</h3>
-            <div ><img style="width:80px:height:50px;color:green" src="file:///mnt/sdcard{{item.image}}">
-               {{item.image}}
-               free
-            <div>Colour : {{item.colour}}</div>
-            <div>Brand : {{item.brand}}</div>
-            </img></div>
-           
-          </ion-slide>
-        </ion-slide-box>
-
-    
+            <div class="fullScreenAvl" style="min-height:100%;color:green;background:url('file:///mnt/sdcard{{item.image}}')">
+              <div>Colour : {{getColour(item.colour)}}</div>
+              <div>Brand : {{getBrand(item.brand)}}</div>
+            </div>
   </ion-content>
-  <image id="tryimage"></image>
 </ion-view>
 <script id="new-item.html" type="text/ng-template">
 
