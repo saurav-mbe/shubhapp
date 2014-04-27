@@ -8,6 +8,12 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform,$location,$rootScope,dbhelper) {
+  var media = null;
+  $rootScope.isDeviceReady = false;
+  var setDeviceReady = function(src) {
+    $rootScope.isDeviceReady = true;
+  };
+  document.addEventListener("deviceready",setDeviceReady,false);
   $rootScope.location = $location;
   //var db= window.openDatabase("shubhapp","1.0","shubhdb",200000);
   dbhelper.populateDB();
@@ -47,7 +53,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       data : {
       title : 'Clothes',
       catId : 1,
-      hash:'clothes'
+      hash:'clothes',
+      mp3 : 'malmal.mp3'
     }
     })
 
@@ -62,7 +69,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         data : {
       title : 'Shoes',
       catId : 2,
-      hash:'shoes'
+      hash:'shoes',
+      mp3 : "sandal.mp3"
     }
     })
     .state('tab.friend-detail', {
@@ -86,7 +94,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         data : {
       title : 'Accessories',
       catId : 3,
-      hash:'accessories'
+      hash:'accessories',
+      mp3:"sona.mp3"
     }
     })
     .state('tab.clothes-list', {

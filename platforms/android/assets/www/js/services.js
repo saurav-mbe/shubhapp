@@ -87,6 +87,31 @@ angular.module('starter.services', [])
           [item.name,item.image,item.colour,item.brand,item.shubhsubcatid],
           cb,errorCb)
       })
+    },
+    updateSubCategory : function(name,subcatId,cb){
+      db.transaction(function(tx){
+        tx.executeSql('UPDATE shubhsubcats SET name=? WHERE ID = '+ subcatId,[name],cb,errorCb);
+      })
+    },
+    updateItem : function(item,cb){
+      db.transaction(function(tx){
+        tx.executeSql('UPDATE shubhitems SET name=?,colour=?,brand=? WHERE ID = '+ item.ID,[item.name,item.colour,item.brand],cb,errorCb);  
+      })
     }
 }
+})
+.factory('filereader',function(){
+    var reader = new FileReader();
+    return {
+      readAsDataURL : function(){
+        
+      }
+    }
+}).
+factory('jsonhelper',function(){
+    return {
+      findOne : function(){
+
+      }
+    } 
 });

@@ -1,12 +1,23 @@
 <ion-view title="{{tab.title}}">
-  <ion-nav-buttons side="left"><button class="button button-positive button-clear no-animation"
-                  ng-click="">Settings</button></ion-nav-buttons>
-  <ion-nav-buttons side="right"><button class="button button-positive button-clear no-animation"
-                  ng-click="newCat()">Add</button></ion-nav-buttons>                
-  <ion-content class="has-header padding">
+  <ion-nav-buttons side="left"><button class="button-icon icon ion-ios7-gear-outline"
+                  ng-click=""></button>
+                  <button class="button-icon icon ion-ios7-play-outline"
+                  ng-click="playAudio({},$event)"></button>
+                </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+      <button class="button-icon icon ion-ios7-compose-outline"
+                  ng-click="changeMode({},$event)"></button>
+      <button class="button-icon icon ion-ios7-plus-outline"
+                  ng-click="newCat()"></button></ion-nav-buttons>                
+  <ion-content class="has-header">
     <ion-list>
-    	<ion-item ng-repeat = "subcat in subcats" href="#/tab/{{tab.hash}}/{{subcat.ID}}">
+    	<ion-item ng-repeat = "subcat in subcats" href="#/tab/{{tab.hash}}/{{subcat.ID}}" ng-if = "mode==='nav'">
               {{subcat.shubhsubcatname}}
+        </ion-item>
+      <ion-item ng-repeat = "subcat in subcats"  ng-if = "mode==='edit'">
+              {{subcat.shubhsubcatname}}
+              <i style="float:right" class="icon ion-edit" ng-click="newCat(item)"></i>
         </ion-item>
     </ion-list>
   </ion-content>

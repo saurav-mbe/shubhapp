@@ -1,4 +1,16 @@
 C:\projects\app1\platforms\android\ant-build\classes.dex : \
+C:\projects\app1\platforms\android\ant-build\classes\com\bikasv\plugins\datepicker\DatePickerPlugin$1$1.class \
+C:\projects\app1\platforms\android\ant-build\classes\com\bikasv\plugins\datepicker\DatePickerPlugin$1$2.class \
+C:\projects\app1\platforms\android\ant-build\classes\com\bikasv\plugins\datepicker\DatePickerPlugin$1$3.class \
+C:\projects\app1\platforms\android\ant-build\classes\com\bikasv\plugins\datepicker\DatePickerPlugin$1.class \
+C:\projects\app1\platforms\android\ant-build\classes\com\bikasv\plugins\datepicker\DatePickerPlugin$2$1.class \
+C:\projects\app1\platforms\android\ant-build\classes\com\bikasv\plugins\datepicker\DatePickerPlugin$2$2.class \
+C:\projects\app1\platforms\android\ant-build\classes\com\bikasv\plugins\datepicker\DatePickerPlugin$2$3.class \
+C:\projects\app1\platforms\android\ant-build\classes\com\bikasv\plugins\datepicker\DatePickerPlugin$2.class \
+C:\projects\app1\platforms\android\ant-build\classes\com\bikasv\plugins\datepicker\DatePickerPlugin$DateSetListener.class \
+C:\projects\app1\platforms\android\ant-build\classes\com\bikasv\plugins\datepicker\DatePickerPlugin$TimeSetListener.class \
+C:\projects\app1\platforms\android\ant-build\classes\com\bikasv\plugins\datepicker\DatePickerPlugin.class \
+C:\projects\app1\platforms\android\ant-build\classes\com\bikasv\plugins\share\Share.class \
 C:\projects\app1\platforms\android\ant-build\classes\com\ionicframework\starter\BuildConfig.class \
 C:\projects\app1\platforms\android\ant-build\classes\com\ionicframework\starter\HelloCordova.class \
 C:\projects\app1\platforms\android\ant-build\classes\com\ionicframework\starter\R$attr.class \
@@ -49,4 +61,10 @@ C:\projects\app1\platforms\android\ant-build\classes\org\apache\cordova\file\Loc
 C:\projects\app1\platforms\android\ant-build\classes\org\apache\cordova\file\LocalFilesystemURL.class \
 C:\projects\app1\platforms\android\ant-build\classes\org\apache\cordova\file\NoModificationAllowedException.class \
 C:\projects\app1\platforms\android\ant-build\classes\org\apache\cordova\file\TypeMismatchException.class \
+C:\projects\app1\platforms\android\ant-build\classes\org\apache\cordova\media\AudioHandler.class \
+C:\projects\app1\platforms\android\ant-build\classes\org\apache\cordova\media\AudioPlayer$1.class \
+C:\projects\app1\platforms\android\ant-build\classes\org\apache\cordova\media\AudioPlayer$MODE.class \
+C:\projects\app1\platforms\android\ant-build\classes\org\apache\cordova\media\AudioPlayer$STATE.class \
+C:\projects\app1\platforms\android\ant-build\classes\org\apache\cordova\media\AudioPlayer.class \
+C:\projects\app1\platforms\android\ant-build\classes\org\apache\cordova\media\FileHelper.class \
 C:\projects\app1\platforms\android\ant-build\dexedLibs\classes-e596c568860a0ac2f72e3b97797b4443.jar \

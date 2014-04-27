@@ -7,12 +7,18 @@
         "res/xml/config.xml": {
             "/*": {
                 "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>": 1,
-                "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>": 1
+                "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>": 1,
+                "<feature name=\"DatePickerPlugin\"><param name=\"android-package\" value=\"com.bikasv.plugins.datepicker.DatePickerPlugin\" /></feature>": 1,
+                "<feature name=\"Share\"><param name=\"android-package\" value=\"com.bikasv.plugins.share.Share\" /></feature>": 1,
+                "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>": 1
             }
         },
         "AndroidManifest.xml": {
             "/*": {
-                "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />": 2
+                "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />": 3,
+                "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />": 1,
+                "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\" />": 1,
+                "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />": 1
             }
         }
     },
@@ -21,6 +27,12 @@
             "PACKAGE_NAME": "com.ionicframework.starter"
         },
         "org.apache.cordova.file": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "com.bikasv.plugins.datepicker": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "org.apache.cordova.media": {
             "PACKAGE_NAME": "com.ionicframework.starter"
         }
     },

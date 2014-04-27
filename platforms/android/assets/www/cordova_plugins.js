@@ -156,13 +156,43 @@ module.exports = [
         "merges": [
             "window.FileSystem"
         ]
+    },
+    {
+        "file": "plugins/com.bikasv.plugins.datepicker/scripts/datePickerPlugin.js",
+        "id": "com.bikasv.plugins.datepicker.datePicker",
+        "clobbers": [
+            "datePicker"
+        ]
+    },
+    {
+        "file": "plugins/com.bikasv.plugins.datepicker/scripts/share.js",
+        "id": "com.bikasv.plugins.datepicker.share",
+        "clobbers": [
+            "share"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.media/www/MediaError.js",
+        "id": "org.apache.cordova.media.MediaError",
+        "clobbers": [
+            "window.MediaError"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.media/www/Media.js",
+        "id": "org.apache.cordova.media.Media",
+        "clobbers": [
+            "window.Media"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
     "org.apache.cordova.camera": "0.2.8",
-    "org.apache.cordova.file": "1.0.1"
+    "org.apache.cordova.file": "1.0.1",
+    "com.bikasv.plugins.datepicker": "0.1.1",
+    "org.apache.cordova.media": "0.2.10"
 }
 // BOTTOM OF METADATA
 });
