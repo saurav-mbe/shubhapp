@@ -5,6 +5,7 @@
   The Friends service returns an array of friend data
 -->
 <ion-view title="Items">
+<<<<<<< HEAD
   <ion-nav-buttons side="left"><button class="button-icon icon ion-ios7-gear-outline"
                   ng-click=""></button></ion-nav-buttons>
   <ion-nav-buttons side="right"><button class="button-icon icon ion-ios7-camera-outline"
@@ -24,6 +25,20 @@
         <ion-slide>
         <div style="color:red">red</div>
       </ion-slide>
+=======
+  <ion-nav-buttons side="left"><button class="button button-positive button-clear no-animation"
+                  ng-click="">Settings</button></ion-nav-buttons>
+  <ion-nav-buttons side="right"><button class="button button-positive button-clear no-animation"
+                  ng-click="newItem()">Add</button></ion-nav-buttons>                
+  <ion-content class="has-header padding">
+       <ion-slide-box on-slide-changed="slideChanged(index)">
+          <ion-slide ng-repeat="item in items">
+            <h3>{{item.name}}!</h3>
+            <div class="fullScreenAvl" style="min-height:100%;color:green;background:url('file:///mnt/sdcard{{item.image}}')">
+              <div>Colour : {{getColour(item.colour)}}</div>
+              <div>Brand : {{getBrand(item.brand)}}</div>
+            </div>
+>>>>>>> 51833662d10d95db978614dc037ca3fa42ebe507
   </ion-content>
 </ion-view>
 <script id="new-item.html" type="text/ng-template">

@@ -6,8 +6,12 @@ angular.module('starter.controllers', [])
    // window.resolveLocalFileSystemURI('shubhapp',function(entry){alert("x"+entry.name)},function(err){alert("error"+err.code)});  
   },false)
   $scope.subcats = [];
+<<<<<<< HEAD
   $scope.mode = 'nav';
   $scope.subcat = {};
+=======
+  $scope.subcat = {shubhsubcatname:"Jeans"}
+>>>>>>> 51833662d10d95db978614dc037ca3fa42ebe507
   var tabs = {
     'clothes':{
       title : 'Clothes',

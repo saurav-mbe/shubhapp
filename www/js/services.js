@@ -92,11 +92,14 @@ angular.module('starter.services', [])
       db.transaction(function(tx){
         tx.executeSql('UPDATE shubhsubcats SET name=? WHERE ID = '+ subcatId,[name],cb,errorCb);
       })
+<<<<<<< HEAD
     },
     updateItem : function(item,cb){
       db.transaction(function(tx){
         tx.executeSql('UPDATE shubhitems SET name=?,colour=?,brand=? WHERE ID = '+ item.ID,[item.name,item.colour,item.brand],cb,errorCb);  
       })
+=======
+>>>>>>> 51833662d10d95db978614dc037ca3fa42ebe507
     }
 }
 })

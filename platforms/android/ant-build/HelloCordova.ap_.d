@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\projects\app1\platforms\android\ant-build\HelloCordova.ap_ \
  : C:\projects\app1\platforms\android\res\drawable\icon.png \
 C:\projects\app1\platforms\android\res\drawable-hdpi\icon.png \
@@ -141,3 +142,5 @@ C:\projects\app1\platforms\android\assets\www\templates\tab-dash.html \
 C:\projects\app1\platforms\android\assets\www\templates\tab-friends.html \
 C:\projects\app1\platforms\android\assets\www\templates\tabs.html \
 C:\projects\app1\platforms\android\ant-build\AndroidManifest.xml \
+=======
+>>>>>>> 51833662d10d95db978614dc037ca3fa42ebe507
